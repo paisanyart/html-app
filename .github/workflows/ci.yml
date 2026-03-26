@@ -2,7 +2,7 @@ name : git workshop demo
 
 on:
   push:
-    branchs:
+    branches:
         - 'feature/**'
         - 'bugfix/**'
         - 'chore/**'
