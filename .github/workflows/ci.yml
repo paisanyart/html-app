@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
         pHONE: '0819999999'
+    environment: development
     steps: 
         - run: echo "${{github.actor}} ${{env.pHONE}}"
         - run: echo "HELLO ${{env.COMPANY_NAME}}"
@@ -26,8 +27,10 @@ jobs:
 
   job-2:
     runs-on: ubuntu-latest
+    environment: production
     steps: 
         - run: echo "HELLO ${{env.COMPANY_NAME}}"
         - run: echo ${{env.SERVER_IP}}
+        - run: echo ${{vars.SERVER_IP_PRODUCTION}}
 
 
