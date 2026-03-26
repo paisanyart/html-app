@@ -9,7 +9,7 @@ on:
 
 jobs:
   job-1:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps: 
         - run: echo "HELLO GITHUB ACTION"
 
