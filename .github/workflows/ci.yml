@@ -7,10 +7,27 @@ on:
         - 'bugfix/**'
         - 'chore/**'
 
+env:
+  SERVER_IP: '127.0.0.1'
+  COMPANY_NAME: 'RBRU'
+  REPO_NAME: ${{github.repository}}
+
 jobs:
   job-1:
     runs-on: ubuntu-latest
+    env:
+        pHONE: '0819999999'
     steps: 
-        - run: echo "HELLO GITHUB ACTION"
+        - run: echo "${{github.actor}} ${{env.pHONE}}"
+        - run: echo "HELLO ${{env.COMPANY_NAME}}"
+        - run: echo ${{env.REPO_NAME}}
+        - run: echo ${{vars.APP_NAME}}
+        - run: echo ${{secrets.API_KEY}}
+
+  job-2:
+    runs-on: ubuntu-latest
+    steps: 
+        - run: echo "HELLO ${{env.COMPANY_NAME}}"
+        - run: echo ${{env.SERVER_IP}}
 
 
